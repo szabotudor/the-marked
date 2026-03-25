@@ -1,4 +1,6 @@
 ﻿default unlock_pride = False
+default unlock_gluttony = False
+default unlock_sloth = False
 
 label start:
 
@@ -20,6 +22,12 @@ label start:
 
         "Travel to Dimention Ylpleys" if unlock_pride:
             jump pride
+
+        "Travel to Dimention Ylensyonti" if unlock_gluttony:
+            jump gluttony
+
+        "Travel to Dimention Laiskuus" if unlock_sloth:
+            jump sloth
 
     jump dim0
 
