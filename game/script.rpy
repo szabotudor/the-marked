@@ -1,4 +1,6 @@
-﻿label start:
+﻿default unlock_pride = False
+
+label start:
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -15,6 +17,9 @@
 
         "Travel to Dimention Viha":
             jump wrath
+
+        "Travel to Dimention Ylpleys" if unlock_pride:
+            jump pride
 
     jump dim0
 
