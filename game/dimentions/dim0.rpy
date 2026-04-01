@@ -1,3 +1,7 @@
+#########
+# WRATH #
+#########
+
 # Characters
 define dad = Character("Dad")
 define kid = Character("Kid")

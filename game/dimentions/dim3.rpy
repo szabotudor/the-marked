@@ -1,3 +1,7 @@
+#########
+# SLOTH #
+#########
+
 # Characers
 # TODO: Gibe name
 define dog = Characer("Dog")

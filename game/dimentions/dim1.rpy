@@ -1,3 +1,7 @@
+#########
+# PRIDE #
+#########
+
 # Characters
 define adv = Character("Adventurer")
 
