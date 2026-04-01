@@ -96,10 +96,25 @@ label wrath_work0:
     $ dad_name = "Darrel"
     dad "And name's Darrel by the way, not that you asked."
 
-    jump i_didnt_ask_name
+    menu:
+        "Didn't ask your name.":
+            jump i_didnt_ask_name
+        "Was curious about you.":
+            jump curiour_about_dad
 
 label i_didnt_ask_name:
     "Your name doesn't matter.{w} I can still talk with you, name or no name."
+
+    dad "Well I don't wanna talk to you, I got a game to catch!"
+
+    menu:
+        "Anything besides the game?":
+            jump anything_besides_game
+        "Go watch your game.":
+            jump go_watch_game
+
+label curiour_about_dad:
+    "I only wanted to talk to you.{w} We don't need formalities."
 
     dad "Well I don't wanna talk to you, I got a game to catch!"
 
