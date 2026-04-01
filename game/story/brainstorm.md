@@ -78,3 +78,10 @@
 
 ### Floating house in the void
 
+
+
+# Overall story-line:
+```
+Wrath -- (Sloth    -- Gluttony) -- Pride -- Wrath 2        -- Good ending
+      \- (Gluttony -- Sloth   ) /        \- Suicide ending
+```
