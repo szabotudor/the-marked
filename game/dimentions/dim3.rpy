@@ -4,7 +4,7 @@
 
 # Characers
 # TODO: Gibe name
-define dog = Characer("Dog")
+define dog = Character("Dog")
 
 label sloth:
     dog "Bork"
