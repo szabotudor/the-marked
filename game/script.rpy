@@ -17,16 +17,16 @@ label start:
     menu:
         "Travel to a dimension"
 
-        "Travel to Dimention Viha":
+        "Travel to Dimension Viha":
             jump wrath
 
-        "Travel to Dimention Ylpleys" if unlock_pride:
+        "Travel to Dimension Ylpleys" if unlock_pride:
             jump pride
 
-        "Travel to Dimention Ylensyonti" if unlock_gluttony:
+        "Travel to Dimension Ylensyonti" if unlock_gluttony:
             jump gluttony
 
-        "Travel to Dimention Laiskuus" if unlock_sloth:
+        "Travel to Dimension Laiskuus" if unlock_sloth:
             jump sloth
 
     jump dim0

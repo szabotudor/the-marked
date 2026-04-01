@@ -1,11 +1,11 @@
-# Charecters
+# Characters
 
-### Interdimentional hunter assassin being
+### Interdimensional hunter assassin being
 - Needs to kill the marked the same way humans need to breathe
 - Internal conflict whether they should do it
 - Uses smell to find marked one
-- Can smell through dimentions
-  - Can smell exact location in house but not which dimention it's coming from
+- Can smell through dimensions
+  - Can smell exact location in house but not which dimension it's coming from
 - Kills by putting hand inside and pulling out the heart
 - Keeps hearts in cloak like a drug dealer
   - Hearts still pump
@@ -44,7 +44,7 @@
 # Locations
 
 ### Story only takes place in one house
-- Everything takes place in local area, throughout may dimentions
+- Everything takes place in local area, throughout may dimensions
 - One house with different filters in other dimetions?
 - What is the house:
   - Office building
@@ -56,7 +56,7 @@
 ### Why can marked one be found?
 - You can smell them (feel their scent)
 
-### Why can hunter travel dimentions?
+### Why can hunter travel dimensions?
 - Fridge
 - Kill the fridge
 
@@ -74,7 +74,7 @@
 - See hunter in the corner
 
 
-# Cool dimentions
+# Cool dimensions
 
 ### Floating house in the void
 
