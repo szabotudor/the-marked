@@ -47,6 +47,17 @@ label start:
 
     window hide
     menu:
+        "Remain here" if coming_from_wrath or coming_from_pride or coming_from_gluttony or coming_from_sloth:
+            window show
+            if coming_from_wrath:
+                jump wrath
+            if coming_from_pride:
+                jump pride
+            if coming_from_gluttony:
+                jump gluttony
+            if coming_from_sloth:
+                jump sloth
+
         "Travel to World Viha" if not coming_from_wrath:
             window show
             jump wrath
