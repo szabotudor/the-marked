@@ -1,3 +1,7 @@
+############
+# GLUTTONY #
+############
+
 # Characers
 define smk = Character("Smoker")
 
