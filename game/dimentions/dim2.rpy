@@ -3,7 +3,7 @@
 ############
 
 # Characers
-define smk = Character("Smoker")
+define smk = Character("[smoker_name]")
 
 label gluttony:
     $ coming_from_wrath = False

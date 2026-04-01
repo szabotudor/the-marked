@@ -4,7 +4,7 @@
 
 # Characers
 # TODO: Gibe name
-define dog = Character("Dog")
+define dog = Character("[dog_name]")
 
 label sloth:
     $ coming_from_wrath = False

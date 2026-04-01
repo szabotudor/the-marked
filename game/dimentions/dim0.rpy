@@ -3,8 +3,8 @@
 #########
 
 # Characters
-define dad = Character("Dad")
-define kid = Character("Kid")
+define dad = Character("[dad_name]")
+define kid = Character("[kid_name]")
 
 label wrath:
     $ coming_from_wrath = True

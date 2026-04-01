@@ -9,8 +9,19 @@ default coming_from_sloth = False
 
 default first_time = True
 
+default dad_name = "???"
+default kid_name = "???"
+default dog_name = "???"
+default smoker_name = "???"
+default traveler_name = "???"
+
 image bg black = "#000"
 image blob = "images/blob.png"
+
+
+transform speaker:
+    xalign 0.2
+    yalign 0.7
 
 label start:
     scene bg black

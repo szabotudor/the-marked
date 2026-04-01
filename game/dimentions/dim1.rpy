@@ -3,7 +3,7 @@
 #########
 
 # Characters
-define adv = Character("Adventurer")
+define adv = Character("[traveler_name]")
 
 label pride:
     $ coming_from_wrath = False
