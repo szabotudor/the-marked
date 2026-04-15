@@ -12,6 +12,15 @@ label sloth:
     $ coming_from_gluttony = False
     $ coming_from_sloth = True
 
-    dog "Bork"
+    dog "Bork?"
+
+    $ unlock_gluttony = True
+
+    menu:
+        "TRAVEL":
+            jump start
+
+        "{color=#ff0000}KILL [dog_name]{/color}":
+            return
 
     return
