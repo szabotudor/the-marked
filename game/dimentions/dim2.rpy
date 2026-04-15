@@ -47,9 +47,9 @@ label gluttony:
 label smk_who_are_you:
     "And who might you be?"
 
-    smk "You can call me Ed."
-
     $ smoker_name = "Ed"
+
+    smk "You can call me Ed."
 
     menu:
         "Mind opening a window?":
@@ -87,15 +87,19 @@ label smk_what_do:
         jump smk_who_are_you_2
     else:
         $ unlock_sloth = True
-        "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+        "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
         jump gluttony
 
 label smk_mystery:
+    "You appear to be quite the mystery yourself."
+
     smk "What, and you think you're the one to unravel said mystery?"
     smk "Good luck."
-    smk "Oh, and my name is Ed. Or is it?"
 
     $ smoker_name = "Ed?"
+
+    smk "Oh, and my name is Ed. Or is it?"
+
     menu:
         "Unraveling a mystery sounds fun.":
             jump smk_unravel
@@ -104,17 +108,20 @@ label smk_mystery:
             jump smk_flirt_abort
 
 label smk_unravel:
+    "I would love to unravel your mystery."
+
     smk "My, my. Feisty, are we?"
     smk "Come hither and I'll tell you all about it."
 
     menu:
-        "COME HITHER":
+        "{color=#2233ff}Come hither.{/color}":
             jump smk_hither
 
         "No, thank you.":
             jump smk_flirt_abort
 
 label smk_hither:
+    "{i}You lean in towards the smoker.{/i}"
     "{i}They draw in, then recoil.{/i}"
     smk "Actually, nevermind. You smell..."
     smk "..."
@@ -125,6 +132,8 @@ label smk_hither:
     jump gluttony
 
 label smk_flirt_abort:
+    "Sorry, that's not what I'm here for."
+
     smk "That's a shame."
     smk "I was rather looking forward to a break from the monotony."
 
@@ -133,7 +142,7 @@ label smk_flirt_abort:
         jump smk_anything_else
     else:
         $ unlock_sloth = True
-        "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+        "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
         jump gluttony
 
 label smk_anything_else:
