@@ -12,6 +12,8 @@ label sloth:
     $ coming_from_gluttony = False
     $ coming_from_sloth = True
 
+    $ visited_sloth = True
+
     dog "Bork?"
 
     $ unlock_gluttony = True

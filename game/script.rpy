@@ -2,6 +2,9 @@
 default unlock_gluttony = False
 default unlock_sloth = False
 
+default visited_gluttony = False
+default visited_sloth = False
+
 default coming_from_wrath = False
 default coming_from_pride = False
 default coming_from_gluttony = False

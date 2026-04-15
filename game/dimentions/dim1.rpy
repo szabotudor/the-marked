@@ -19,7 +19,7 @@ label pride:
         adv "Hey! I wasn't expecting guests."
         $ pride_first_time = False
 
-        if unlock_gluttony and unlock_sloth and not say_no_find_kid:
+        if visited_gluttony and visited_sloth and not say_no_find_kid:
             adv "You seem a little lost. Need help getting somewhere?"
 
             menu:
@@ -40,7 +40,7 @@ label pride:
                 jump kill_traveler
 
     else:
-        if unlock_gluttony and unlock_sloth and not say_no_find_kid and not unlock_kid:
+        if visited_gluttony and visited_sloth and not say_no_find_kid and not unlock_kid:
             adv "Need help getting somewhere?"
 
             menu:

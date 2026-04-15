@@ -13,6 +13,8 @@ label gluttony:
     $ coming_from_gluttony = True
     $ coming_from_sloth = False
 
+    $ visited_gluttony = True
+
     if gluttony_first_time:
         $ gluttony_first_time = False
         "{i}A fine haze obscures even the other end of the kitchen.{/i}"
