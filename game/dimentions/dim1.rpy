@@ -56,8 +56,8 @@ label pride:
             "TRAVEL":
                 jump start
 
-            "Anything besides traveling?" if (coming_from_gluttony or coming_from_sloth) and unlock_gluttony and unlock_sloth:
-                jump talk_about_map
+            "Anything besides traveling?":
+                jump talk_about_map_but_first
 
             "{color=#ff0000}KILL [traveler_name]{/color}":
                 jump kill_traveler
@@ -128,10 +128,22 @@ label no_help_find_kid:
     jump pride
 
 
+label talk_about_map_but_first:
+    "Do you do anything else besides traveling?"
+
+    adv "Nowadays I don't even do that."
+
+    adv "But sometimes, when I'm not out on a walk, I look at things I collected along my travels."
+
+    jump talk_about_map
+
+
 label talk_about_map:
     "What are you looking at over there?"
 
-    adv "Oh this? I'm just reminiscing about old times"
+    adv "Oh this? This is a map I've marked with travel destinations before I became an explorer."
+    
+    adv "I just like reminiscing about old times."
 
     if unlock_gluttony and not unlock_sloth:
         jump talk_about_map_a_lot
