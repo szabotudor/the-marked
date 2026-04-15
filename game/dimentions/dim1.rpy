@@ -28,7 +28,16 @@ label pride:
                 jump kill_traveler
 
     else:
-        adv "So many stories to tell..."
+        if unlock_gluttony and unlock_sloth:
+            adv "Need help getting somewhere?"
+
+            menu:
+                "I need to find someone...":
+                    jump help_find_kid
+                "I can do it myself":
+                    jump no_help_find_kid
+        else:
+            adv "So many stories to tell..."
 
         menu:
             "TRAVEL":
@@ -42,6 +51,17 @@ label pride:
 
     return
 
+
+label help_find_kid:
+    "TODO Find kid"
+    return
+
+
+label no_help_find_kid:
+    "TODO Find kid"
+    return
+
+
 label talk_about_map:
     "What are you looking at over there?"
 
@@ -52,7 +72,11 @@ label talk_about_map:
     elif unlock_sloth and not unlock_gluttony:
         jump talk_about_old_times
     
-    "INVALID"
+    "I'll be brief. I need help finding someone."
+
+    adv "Really? Well you've come to the right place"
+
+    jump help_find_kid
 
 
 label talk_about_map_a_lot:
@@ -71,7 +95,7 @@ label talk_about_map_a_lot:
 
     adv "You know, I once escaped Reunion Island on a life raft."
 
-    "You seem very proud of your past as an explorer"
+    "You seem very proud of your past as an explorer."
 
     adv "Yes. A pioneer, I'd say.{w} I've seen and done everything there is to see or do on this earth."
 
@@ -90,7 +114,7 @@ label talk_about_old_times:
 
     adv "When I was young, I'd just hop on a boat or a plane and see where the wind takes me."
 
-    adv "Then, when I get there, I just let the course of a river cary me elsewhere."
+    adv "Then, when I get there, I just let the course of a river carry me elsewhere."
 
     adv "I've covered the whole map.{w} I've even been off the map."
 
@@ -128,7 +152,7 @@ label ask_name_adv:
     adv "Anderson, the explorer?{w} The first man to walk from South Africa to Morocco on foot?"
 
     menu:
-        "[stay silent]":
+        "{i}stay silent{/i}":
             jump stay_silent_know_adv_first
 
         "I haven't heard of you":
