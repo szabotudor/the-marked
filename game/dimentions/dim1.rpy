@@ -25,6 +25,7 @@ label pride:
                 jump ask_name_adv
             
             "{color=#ff0000}KILL [traveler_name]{/color}":
+                jump kill_traveler
 
     else:
         adv "So many stories to tell..."
@@ -37,6 +38,7 @@ label pride:
                 jump talk_about_map
 
             "{color=#ff0000}KILL [traveler_name]{/color}":
+                jump kill_traveler
 
     return
 
@@ -127,7 +129,7 @@ label ask_name_adv:
 
     menu:
         "[stay silent]":
-            jump stay_silent_know_adv
+            jump stay_silent_know_adv_first
 
         "I haven't heard of you":
             jump dont_know_adv
@@ -162,12 +164,14 @@ label stay_silent_know_adv:
     jump pride
 
 
-label stay_silent_know_adv:
+label stay_silent_know_adv_first:
     "..."
 
     adv "Ah, well what do you know anyway?"
 
     adv "I've been everywhere around the world. I don't imagine you've done as much."
+
+    jump stay_silent_know_adv
 
 
 label dont_know_adv:
@@ -175,7 +179,7 @@ label dont_know_adv:
 
     adv "Really?"
 
-    jump dont_know_adv
+    jump stay_silent_know_adv_first
 
 
 label yes_know_adv:
