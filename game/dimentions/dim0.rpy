@@ -94,7 +94,7 @@ label dad_plans_for_night:
 label wrath_work0:
     dad "Tired."
 
-    dad "Had a long day at work. Just like yester day... {w} And the day before... {w} And every day for that matter."
+    dad "Had a long day at work. Just like yesterday... {w} And the day before... {w} And every day for that matter."
 
     dad "Ain't got no time for a good time."
 

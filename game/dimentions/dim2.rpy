@@ -28,7 +28,7 @@ label gluttony:
                 jump smk_who_are_you
 
             "You're quite the mystery yourself.":
-                jump kill_smk
+                jump smk_mystery
 
             "{color=#ff0000}KILL [smoker_name]{/color}":
                 jump kill_smk
@@ -89,6 +89,60 @@ label smk_what_do:
         $ unlock_sloth = True
         "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
         jump gluttony
+
+label smk_mystery:
+    smk "What, and you think you're the one to unravel said mystery?"
+    smk "Good luck."
+    smk "Oh, and my name is Ed. Or is it?"
+
+    $ smoker_name = "Ed?"
+    menu:
+        "Unraveling a mystery sounds fun.":
+            jump smk_unravel
+
+        "Keep your secrets.":
+            jump smk_flirt_abort
+
+label smk_unravel:
+    smk "My, my. Feisty, are we?"
+    smk "Come hither and I'll tell you all about it."
+
+    menu:
+        "COME HITHER":
+            jump smk_hither
+
+        "No, thank you.":
+            jump smk_flirt_abort
+
+label smk_hither:
+    "{i}They draw in, then recoil.{/i}"
+    smk "Actually, nevermind. You smell..."
+    smk "..."
+    smk "Off."
+
+    $ unlock_pride = True
+    "{color=#22ff33}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    jump gluttony
+
+label smk_flirt_abort:
+    smk "That's a shame."
+    smk "I was rather looking forward to a break from the monotony."
+
+    if unlock_sloth:
+        smk "Anything else?"
+        jump smk_anything_else
+    else:
+        $ unlock_sloth = True
+        "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+        jump gluttony
+
+label smk_anything_else:
+    "{i}[smoker_name] seems bored.{/i}"
+    "{i}Maybe you're not worth their time.{/i}"
+
+    $ unlock_pride = True
+    "{color=#22ff33}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    jump gluttony
 
 label kill_smk:
     return
