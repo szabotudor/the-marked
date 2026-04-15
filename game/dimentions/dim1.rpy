@@ -7,6 +7,8 @@ define adv = Character("[traveler_name]")
 
 default pride_first_time = True
 
+default say_no_find_kid = False
+
 label pride:
     $ coming_from_wrath = False
     $ coming_from_pride = True
@@ -16,6 +18,16 @@ label pride:
     if pride_first_time:
         adv "Hey! I wasn't expecting guests."
         $ pride_first_time = False
+
+        if unlock_gluttony and unlock_sloth and not say_no_find_kid:
+            adv "You seem a little lost. Need help getting somewhere?"
+
+            menu:
+                "I need to find someone...":
+                    jump help_find_kid
+                "I can do it myself":
+                    $ say_no_find_kid = True
+                    jump no_help_find_kid
 
         menu:
             "What are you looking at?":
@@ -28,13 +40,14 @@ label pride:
                 jump kill_traveler
 
     else:
-        if unlock_gluttony and unlock_sloth:
+        if unlock_gluttony and unlock_sloth and not say_no_find_kid:
             adv "Need help getting somewhere?"
 
             menu:
                 "I need to find someone...":
                     jump help_find_kid
                 "I can do it myself":
+                    $ say_no_find_kid = True
                     jump no_help_find_kid
         else:
             adv "So many stories to tell..."
@@ -53,13 +66,66 @@ label pride:
 
 
 label help_find_kid:
-    "TODO Find kid"
-    return
+    $ unlock_kid = True
+    "I am looking for someone. Do you think you could help me?"
+
+    adv "Depends. Do they know you're coming?"
+
+    "Yes."
+
+    adv "Then they'll probably be hiding.{w} Maybe right under your nose..."
+
+    "What are you trying to say?"
+
+    adv "Come on, I basically spelled it out for you."
+
+    "..."
+
+    adv "Do I really have to tell you where they are hiding?"
+
+    menu:
+        "Give me a hint":
+            jump yes_want_help_kid
+        "I can do it myself":
+            jump no_want_help_kid
+
+
+label yes_want_help_kid:
+    "Yes. Help me find this person."
+
+    adv "Try going back to places you've already been.{w} You're bound to notice something you haven't before."
+
+    menu:
+        "Thank you":
+            "Thank you. I will try"
+            jump pride
+
+        "More precise?":
+            "Can you be more precise?"
+
+            adv "I'm saying trust your instinct. Go back to where you started, you might find something there."
+
+            "Thank you. I will try."
+            jump pride
+
+
+label no_want_help_kid:
+    "No, I can handle this on my own."
+
+    adv "Good luck in your adventure."
+
+    "Thank you"
+
+    jump pride
 
 
 label no_help_find_kid:
-    "TODO Find kid"
-    return
+    $ unlock_kid = True
+    "No thank you. I can find what I'm looking for myself."
+
+    adv "Suit yourself. Just thought you'd appreciate the help of an expert."
+
+    jump pride
 
 
 label talk_about_map:

@@ -8,6 +8,7 @@ default coming_from_gluttony = False
 default coming_from_sloth = False
 
 default first_time = True
+default unlock_kid = False
 
 default dad_name = "???"
 default kid_name = "???"
