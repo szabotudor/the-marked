@@ -141,7 +141,8 @@ label anything_besides_game:
     "And you do that every day?"
 
     dad "Sure do."
-
+    
+    $ unlock_sloth = True
     "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}\n{w}You've unlocked another world"
     jump wrath
 
@@ -153,6 +154,7 @@ label go_watch_game:
     "{i}He walks to the fridge and picks up a six pack.{/i}"
     "{i}Judging by the state of this place, this is a common occurence.{/i}"
 
+    $ unlock_gluttony = True
     "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump wrath
 
