@@ -18,7 +18,7 @@ label wrath:
         $ wrath_first_time = False
         "This world has a foul smell"
 
-        "This appartment probably hasn't been cleaned in weeks"
+        "This apartment probably hasn't been cleaned in weeks"
 
         dad "Watch your mouth, buddy!"
 
@@ -36,7 +36,12 @@ label wrath:
     else:
         dad "Whaddaya want?"
 
-    return
+        menu:
+            "TRAVEL":
+                jump start
+
+            "{color=#ff0000}KILL [dad_name]{/color}":
+                jump kill_dad
 
 
 label wrath_dad_introduce:
@@ -68,7 +73,7 @@ label dad_do_for_work:
 
     $ unlock_gluttony = True
     "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
-    return
+    jump wrath
 
 label dad_plans_for_night:
     "How do you plan on spending tonight then?"
@@ -83,7 +88,7 @@ label dad_plans_for_night:
 
     $ unlock_sloth = True
     "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
-    return
+    jump wrath
 
 
 label wrath_work0:
@@ -138,7 +143,7 @@ label anything_besides_game:
     dad "Sure do."
 
     "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}\n{w}You've unlocked another world"
-    return
+    jump wrath
 
 label go_watch_game:
     "Then go watch your game. We'll talk later."
@@ -149,7 +154,7 @@ label go_watch_game:
     "{i}Judging by the state of this place, this is a common occurence.{/i}"
 
     "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
-    return
+    jump wrath
 
 
 label kill_dad:
