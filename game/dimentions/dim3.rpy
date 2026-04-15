@@ -20,7 +20,7 @@ label sloth:
         "TRAVEL":
             jump start
 
-        "{color=#ff0000}KILL [dog_name]{/color}":
+        "{color=[kill_color]}KILL [dog_name]{/color}":
             return
 
     return

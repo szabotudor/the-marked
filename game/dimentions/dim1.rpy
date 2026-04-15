@@ -36,7 +36,7 @@ label pride:
             "What's your name?":
                 jump ask_name_adv
             
-            "{color=#ff0000}KILL [traveler_name]{/color}":
+            "{color=[kill_color]}KILL [traveler_name]{/color}":
                 jump kill_traveler
 
     else:
@@ -59,7 +59,7 @@ label pride:
             "Anything besides traveling?":
                 jump talk_about_map_but_first
 
-            "{color=#ff0000}KILL [traveler_name]{/color}":
+            "{color=[kill_color]}KILL [traveler_name]{/color}":
                 jump kill_traveler
 
     return
@@ -178,7 +178,7 @@ label talk_about_map_a_lot:
     adv "Yes. A pioneer, I'd say.{w} I've seen and done everything there is to see or do on this earth."
 
     $ unlock_sloth = True
-    "{color=#22ff33}The scent of forced nostalgia draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of forced nostalgia draws me elsewhere...{/color}{w}\nYou've unlocked another world"
 
     jump pride
 
@@ -212,7 +212,7 @@ label talk_about_old_times:
     adv "But in my youth, I really was something."
 
     $ unlock_gluttony = True
-    "{color=#22ff33}The scent of the overwhelming need to impress draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of the overwhelming need to impress draws me elsewhere...{/color}{w}\nYou've unlocked another world"
 
     jump pride
 
@@ -261,7 +261,7 @@ label stay_silent_know_adv:
     elif unlock_sloth:
         $ unlock_gluttony = True
 
-    "{color=#22ff33}The scent of self-pity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of self-pity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
 
     jump pride
 
@@ -310,7 +310,7 @@ label yes_know_adv:
     elif unlock_sloth:
         $ unlock_gluttony = True
 
-    "{color=#22ff33}The scent of self-importance draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of self-importance draws me elsewhere...{/color}{w}\nYou've unlocked another world"
 
     jump pride
 

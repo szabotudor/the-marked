@@ -30,7 +30,7 @@ label gluttony:
             "You're quite the mystery yourself.":
                 jump smk_mystery
 
-            "{color=#ff0000}KILL [smoker_name]{/color}":
+            "{color=[kill_color]}KILL [smoker_name]{/color}":
                 jump kill_smk
     else:
         smk "Back for more?"
@@ -39,8 +39,12 @@ label gluttony:
             "TRAVEL":
                 jump start
 
-            "{color=#ff0000}KILL [smoker_name]{/color}":
+            "{color=[action_color]}Look around{/color}" if (unlock_kid):
+                jump smk_look_around
+
+            "{color=[kill_color]}KILL [smoker_name]{/color}":
                 jump kill_smk
+
 
     return
 
@@ -73,7 +77,7 @@ label smk_open_window:
     smk "Bad for the skin, you see?"
 
     $ unlock_pride = True
-    "{color=#22ff33}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump gluttony
 
 label smk_what_do:
@@ -87,7 +91,7 @@ label smk_what_do:
         jump smk_who_are_you_2
     else:
         $ unlock_sloth = True
-        "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+        "{color=[new_smell_color]}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
         jump gluttony
 
 label smk_mystery:
@@ -114,7 +118,7 @@ label smk_unravel:
     smk "Come hither and I'll tell you all about it."
 
     menu:
-        "{color=#2233ff}Come hither.{/color}":
+        "{color=[action_color]}Come hither.{/color}":
             jump smk_hither
 
         "No, thank you.":
@@ -128,7 +132,7 @@ label smk_hither:
     smk "Off."
 
     $ unlock_pride = True
-    "{color=#22ff33}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump gluttony
 
 label smk_flirt_abort:
@@ -142,7 +146,7 @@ label smk_flirt_abort:
         jump smk_anything_else
     else:
         $ unlock_sloth = True
-        "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+        "{color=[new_smell_color]}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
         jump gluttony
 
 label smk_anything_else:
@@ -150,7 +154,12 @@ label smk_anything_else:
     "{i}Maybe you're not worth their time.{/i}"
 
     $ unlock_pride = True
-    "{color=#22ff33}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of vanity draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    jump gluttony
+
+label smk_look_around:
+    "{i}You look around the kitchen.{/i}"
+    "{i}It's hazy.{/i}"
     jump gluttony
 
 label kill_smk:

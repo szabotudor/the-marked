@@ -31,7 +31,7 @@ label wrath:
             "What is on your mind?":
                 jump wrath_work0
 
-            "{color=#ff0000}KILL [dad_name]{/color}":
+            "{color=[kill_color]}KILL [dad_name]{/color}":
                 jump kill_dad
     else:
         dad "Whaddaya want?"
@@ -40,7 +40,7 @@ label wrath:
             "TRAVEL":
                 jump start
 
-            "{color=#ff0000}KILL [dad_name]{/color}":
+            "{color=[kill_color]}KILL [dad_name]{/color}":
                 jump kill_dad
 
 
@@ -72,7 +72,7 @@ label dad_do_for_work:
     dad "Sure do.{w} Gotta have enough for the game tonight."
 
     $ unlock_gluttony = True
-    "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump wrath
 
 label dad_plans_for_night:
@@ -87,7 +87,7 @@ label dad_plans_for_night:
     dad "Every night."
 
     $ unlock_sloth = True
-    "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of lethargy draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump wrath
 
 
@@ -143,7 +143,7 @@ label anything_besides_game:
     dad "Sure do."
     
     $ unlock_sloth = True
-    "{color=#22ff33}The scent of lethargy draws me elsewhere...{/color}\n{w}You've unlocked another world"
+    "{color=[new_smell_color]}The scent of lethargy draws me elsewhere...{/color}\n{w}You've unlocked another world"
     jump wrath
 
 label go_watch_game:
@@ -155,7 +155,7 @@ label go_watch_game:
     "{i}Judging by the state of this place, this is a common occurence.{/i}"
 
     $ unlock_gluttony = True
-    "{color=#22ff33}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
+    "{color=[new_smell_color]}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump wrath
 
 

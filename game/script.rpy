@@ -16,6 +16,10 @@ default dog_name = "???"
 default smoker_name = "???"
 default traveler_name = "???"
 
+default action_color = "#2233ff"
+default new_smell_color = "#22ff33"
+default kill_color = "#ff0000"
+
 image bg black = "#000"
 image blob = "images/blob.png"
 
