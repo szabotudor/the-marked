@@ -40,6 +40,12 @@ label wrath:
             "TRAVEL":
                 jump start
 
+            "{color=[action_color]}Look around{/color}" if (unlock_kid and not unlock_kid_2):
+                jump dad_look_around
+
+            "Who are you hiding?" if (unlock_kid_2):
+                jump dad_hiding
+
             "{color=[kill_color]}KILL [dad_name]{/color}":
                 jump kill_dad
 
@@ -158,6 +164,15 @@ label go_watch_game:
     "{color=[new_smell_color]}The scent of consumption draws me elsewhere...{/color}{w}\nYou've unlocked another world"
     jump wrath
 
+label dad_look_around:
+    "{i}You look around the kitchen.{/i}"
+    "{i}You take a whiff.{/i}"
+    "{i}There is something else here... Someone else.{/i}"
+    $ unlock_kid_2 = True
+    jump wrath
+
+label dad_hiding:
+    jump kill_dad
 
 label kill_dad:
     return

@@ -12,6 +12,7 @@ default coming_from_sloth = False
 
 default first_time = True
 default unlock_kid = False
+default unlock_kid_2 = False
 
 default dad_name = "???"
 default kid_name = "???"
