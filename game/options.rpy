@@ -13,7 +13,7 @@
 ## The _() surrounding the string marks it as eligible for translation.
 
 # TODO: NO
-define config.name = _("Makred")
+define config.name = _("Marked")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
