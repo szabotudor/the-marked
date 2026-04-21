@@ -63,6 +63,9 @@ label pride:
             "Anything besides traveling?":
                 jump talk_about_map_but_first
 
+            "{color=[action_color]}Look around{/color}" if (unlock_kid):
+                jump adv_look_around
+
             "{color=[kill_color]}KILL [traveler_name]{/color}":
                 jump kill_traveler
 
@@ -307,7 +310,7 @@ label yes_know_adv:
 
     adv "Hah! You just can't chose, right?"
 
-    adv "i've got to admit, I didn't expect this, but my name proceeds me."
+    adv "I've got to admit, I didn't expect this, but my name precedes me."
 
     if unlock_gluttony:
         $ unlock_sloth = True
@@ -318,6 +321,19 @@ label yes_know_adv:
 
     jump pride
 
+label adv_look_around:
+    "{i}You look around the kitchen.{/i}"
+    "{i}It's full of souvenirs.{/i}"
+    adv "It's not here, silly."
+    jump pride
 
 label kill_traveler:
-    "TODO: Kill the traveler"
+    adv "H-hey, please don't, I'm not—"
+    scene bg black
+    show black
+    with Fade(3.0, 0.3, 0.0, color="#000")
+    window hide
+    window show
+    "{i}Your hand plunges into man's chest, and draws out his heart.{w} It beats one last time.{/i}"
+    window hide
+    jump bad_ending

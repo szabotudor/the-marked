@@ -169,4 +169,13 @@ label smk_look_around:
     jump gluttony
 
 label kill_smk:
+    smk "Now, now, aren't we coming off str—?"
+    scene bg black
+    show black
+    with Fade(3.0, 0.3, 0.0, color="#000")
+    window hide
+    window show
+    "{i}Your hand plunges into [smoker_name]'s chest, and draws out their heart.{w} It beats one last time.{/i}"
+    window hide
+    jump bad_ending
     return

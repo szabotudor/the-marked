@@ -179,4 +179,15 @@ label dad_hiding:
     jump kill_dad
 
 label kill_dad:
+    dad "What the—?"
+
+    scene bg black
+    show black
+    with Fade(3.0, 0.3, 0.0, color="#000")
+    window hide
+    window show
+    "{i}Your hand plunges into the man's chest, and draws out his heart.{w} It beats one last time.{/i}"
+    "{i}You hear the faint sound of sobbing as the world vanishes.{/i}"
+    window hide
+    jump bad_ending
     return

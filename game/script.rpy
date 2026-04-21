@@ -105,3 +105,7 @@ label start:
 
     return
 
+label bad_ending:
+    window show
+    "{color=[kill_color]}{i}The scent of the marked one persists.{i}"
+    window hide
