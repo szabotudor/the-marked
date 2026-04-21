@@ -13,6 +13,10 @@ label gluttony:
     $ coming_from_gluttony = True
     $ coming_from_sloth = False
 
+    show smk_img:
+        xalign 0.5
+        zoom 0.3
+
     $ visited_gluttony = True
 
     if gluttony_first_time:

@@ -15,6 +15,10 @@ label pride:
     $ coming_from_gluttony = False
     $ coming_from_sloth = False
 
+    show adv_img:
+        xalign 0.5
+        zoom 0.3
+
     if pride_first_time:
         adv "Hey! I wasn't expecting guests."
         $ pride_first_time = False

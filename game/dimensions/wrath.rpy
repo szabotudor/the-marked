@@ -14,6 +14,10 @@ label wrath:
     $ coming_from_gluttony = False
     $ coming_from_sloth = False
 
+    show dad_img:
+        xalign 0.5
+        zoom 0.3
+
     if wrath_first_time:
         $ wrath_first_time = False
         "This world has a foul smell"
