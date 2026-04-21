@@ -7,7 +7,10 @@
 define dog = Character("[dog_name]")
 
 label sloth:
-
+    if (coming_from_gluttony):
+        $ unlock_pride = True
+    else:
+        $ unlock_gluttony = True
 
     $ coming_from_wrath = False
     $ coming_from_pride = False
@@ -21,8 +24,6 @@ label sloth:
         zoom 0.3
 
     dog "Bork?"
-
-    $ unlock_gluttony = True
 
     menu:
         "TRAVEL":

@@ -13,6 +13,7 @@ default coming_from_sloth = False
 default first_time = True
 default unlock_kid = False
 default unlock_kid_2 = False
+default unlock_kid_3 = False
 
 default dad_name = "???"
 default kid_name = "???"
@@ -31,7 +32,7 @@ image dad_img = "images/characters/Father_Clear.png"
 image dog_img = "images/characters/Dog_Clear.png"
 image smk_img = "images/characters/Smoker_Clear.png"
 image adv_img = "images/characters/Traveler_Clear.png"
-
+# image kid_img = "images/characters/Kid_Clear.png"
 
 transform speaker:
     xalign 0.2
@@ -100,12 +101,16 @@ label start:
             jump sloth
 
     jump dim0
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
     return
 
 label bad_ending:
     window show
     "{color=[kill_color]}{i}The scent of the marked one persists.{i}"
     window hide
+    return
+
+label good_ending:
+    window show
+    "{color=[new_smell_color]}{i}You lost the scent.{i}"
+    window hide
+    return

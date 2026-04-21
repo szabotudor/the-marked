@@ -7,6 +7,7 @@ define dad = Character("[dad_name]")
 define kid = Character("[kid_name]")
 
 default wrath_first_time = True
+default kid_first_time = True
 
 label wrath:
     $ coming_from_wrath = True
@@ -49,6 +50,9 @@ label wrath:
 
             "Who are you hiding?" if (unlock_kid_2):
                 jump dad_hiding
+
+            "I'd like to talk to the kid" if (unlock_kid_3):
+                jump dad_talk_kid
 
             "{color=[kill_color]}KILL [dad_name]{/color}":
                 jump kill_dad
@@ -176,7 +180,99 @@ label dad_look_around:
     jump wrath
 
 label dad_hiding:
-    jump kill_dad
+    "Sir, I know you're not alone in here."
+
+    dad "The hell are you on about?"
+
+    menu:
+        "Nevermind.":
+            jump wrath
+        "Step aside.":
+            jump dad_step_aside
+        "{color=[action_color]}Push [dad_name] aside.{/color}":
+            jump dad_push_aside
+
+label dad_step_aside:
+    "I need you to step aside."
+
+    dad "You don't get to tell me what to do.{w} This is {i}my{/i} house, fucker."
+
+    "{i}You swear you can hear a soft whine from behind [dad_name].{/i}"
+
+    menu:
+        "Alright.":
+            jump wrath
+        "Who's that behind you?":
+            jump dad_behind
+        "{color=[action_color]}Push [dad_name] aside.{/color}":
+            jump dad_push_aside
+
+label dad_behind:
+    "I know there's someone behind you."
+
+    "{i}[dad_name] lets out a frustrated sigh.{/i}"
+
+    dad "Fine. You got me. Meet the kid."
+
+    jump kid_appear
+
+label dad_push_aside:
+    "{i}You shove the burly man aside.{/i}"
+
+    dad "HEY, keep your hands off me, you {i}fuck{/i}er!"
+
+    jump kid_appear
+
+label dad_talk_kid:
+    "I'd like to talk to the kid, please."
+
+    dad "I'll be watching."
+
+    jump kid_appear
+
+label kid_appear:
+    scene bg black
+    # show kid_img:
+    #     xalign 0.5
+    #     zoom 0.3
+    show black
+    if (kid_first_time):
+        with Fade(3.0, 0.3, 0.0, color="#000")
+    else:
+        with Fade(1.0, 0.3, 0.0, color="#000")
+    window hide
+    window show
+
+    "{i}[kid_name] backs up against the kitchen counter.{/i}"
+    kid "Stay away from me!"
+
+    jump kid_start
+
+label kid_start:
+    $ unlock_kid_3 = True
+
+    "{i}The kid looks terrified.{/i}"
+
+    menu:
+        "TRAVEL" if (not kid_first_time):
+            jump start
+
+        "What's your name?" if (kid_first_time):
+            $ kid_first_time = False
+            jump kid_name
+
+        "{color=[kill_color]}KILL [kid_name]{/color}":
+            jump kill_kid
+
+label kid_name:
+    "What's your name, kid?"
+
+    "{i}The kid just stares at you.{/i}"
+
+    $ kid_name = "Billy"
+    dad "Billy's a little timid."
+
+    jump kid_start
 
 label kill_dad:
     dad "What the—?"
@@ -190,4 +286,19 @@ label kill_dad:
     "{i}You hear the faint sound of sobbing as the world vanishes.{/i}"
     window hide
     jump bad_ending
-    return
+
+label kill_kid:
+    "{i}The kid screams.{/i}"
+
+    scene bg black
+    show black
+    with Fade(3.0, 0.3, 0.0, color="#000")
+    window hide
+    window show
+    dad "NO!"
+    window hide
+    window show
+    "{i}Your hand plunges into the kid's chest, and draws out his heart.{w} It beats one last time.{/i}"
+    "{i}Nothing but rage and desperation can be seen [dad_name]'s eyes, as he jumps at you.{w} Just before he reaches you, however, the world vanishes.{/i}"
+    window hide
+    jump good_ending
