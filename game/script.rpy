@@ -32,7 +32,7 @@ image dad_img = "images/characters/Father_Clear.png"
 image dog_img = "images/characters/Dog_Clear.png"
 image smk_img = "images/characters/Smoker_Clear.png"
 image adv_img = "images/characters/Traveler_Clear.png"
-# image kid_img = "images/characters/Kid_Clear.png"
+image kid_img = "images/characters/Child_Clear.png"
 
 transform speaker:
     xalign 0.2

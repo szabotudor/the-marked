@@ -232,10 +232,9 @@ label dad_talk_kid:
 
 label kid_appear:
     scene bg black
-    # show kid_img:
-    #     xalign 0.5
-    #     zoom 0.3
-    show black
+    show kid_img:
+        xalign 0.5
+        zoom 0.3
     if (kid_first_time):
         with Fade(3.0, 0.3, 0.0, color="#000")
     else:
