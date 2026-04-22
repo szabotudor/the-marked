@@ -15,9 +15,17 @@ label wrath:
     $ coming_from_gluttony = False
     $ coming_from_sloth = False
 
+    scene bg kitchen:
+        zoom 0.675
+        yalign 0.5
+    show halfblack with dissolve
     show dad_img:
-        xalign 0.5
-        zoom 0.3
+        xalign 0.1
+        zoom 0.18
+    show htr_img:
+        xalign 1.1
+        yalign 0.5
+        zoom 0.275
 
     if wrath_first_time:
         $ wrath_first_time = False
