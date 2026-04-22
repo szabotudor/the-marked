@@ -15,9 +15,17 @@ label pride:
     $ coming_from_gluttony = False
     $ coming_from_sloth = False
 
+    scene bg kitchen:
+        zoom 0.675
+        yalign 0.5
+    show halfblack with dissolve
     show adv_img:
-        xalign 0.5
-        zoom 0.3
+        xalign 0.05
+        zoom 0.21
+    show htr_img:
+        xalign 1.15
+        yalign 0.5
+        zoom 0.275
 
     if pride_first_time:
         adv "Hey! I wasn't expecting guests."

@@ -26,6 +26,7 @@ default new_smell_color = "#22ff33"
 default kill_color = "#ff0000"
 
 image bg black = "#000"
+image halfblack = "#00000088" #hope this is half transparent (haven't tested)
 image blob = "images/blob.png"
 image htr_img = "images/characters/Hunter_Clear.png"
 image dad_img = "images/characters/Father_Clear.png"
@@ -66,6 +67,10 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+
+    scene bg kitchen:
+        zoom 0.675
+        yalign 0.5
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
