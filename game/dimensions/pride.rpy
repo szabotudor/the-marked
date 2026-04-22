@@ -31,7 +31,7 @@ label pride:
         adv "Hey! I wasn't expecting guests."
         $ pride_first_time = False
 
-        if visited_gluttony and visited_sloth and not say_no_find_kid:
+        if visited_gluttony and visited_sloth and say_no_find_kid:
             adv "You seem a little lost. Need help getting somewhere?"
 
             menu:
