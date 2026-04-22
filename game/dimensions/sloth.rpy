@@ -19,9 +19,14 @@ label sloth:
 
     $ visited_sloth = True
 
+    scene bg kitchen:
+        zoom 0.675
+        yalign 0.5
+    show halfblack with dissolve
     show dog_img:
-        xalign 0.5
-        zoom 0.3
+        xalign 0.67
+        yalign 0.5
+        zoom 0.2
 
     dog "..."
 
