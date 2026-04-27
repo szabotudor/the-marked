@@ -7,11 +7,6 @@
 define dog = Character("[dog_name]")
 
 label sloth:
-    if (coming_from_gluttony):
-        $ unlock_pride = True
-    else:
-        $ unlock_gluttony = True
-
     $ coming_from_wrath = False
     $ coming_from_pride = False
     $ coming_from_gluttony = False
@@ -98,6 +93,12 @@ label tell_truth:
     "No, Im sorry"
     "He will not forgive you."
     dog "I know. I am unforgivable."
+
+    if (coming_from_gluttony):
+        $ unlock_pride = True
+    else:
+        $ unlock_gluttony = True
+    "{color=[new_smell_color]}An unfamiliar scent draws me elsewhere...{/color}\n{w}You've unlocked another world"
     jump sloth
 
 label lie_to_him:
@@ -107,6 +108,11 @@ label lie_to_him:
     dog "I know. He loves me, he believe that he will forgive me."
     "Dont worry, everything will be ok. The guilt you feel dripping down your ribs will drain from your body."
 
+    if (coming_from_gluttony):
+        $ unlock_pride = True
+    else:
+        $ unlock_gluttony = True
+    "{color=[new_smell_color]}An unfamiliar scent draws me elsewhere...{/color}\n{w}You've unlocked another world"
     jump sloth
 
 
