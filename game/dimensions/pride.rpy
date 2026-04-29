@@ -52,7 +52,7 @@ label pride:
                 jump kill_traveler
 
     else:
-        if visited_gluttony and visited_sloth and not say_no_find_kid and not unlock_kid:
+        if visited_gluttony and visited_sloth and say_no_find_kid and not unlock_kid:
             adv "Need help getting somewhere?"
 
             menu:
